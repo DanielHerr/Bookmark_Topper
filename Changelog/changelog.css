@@ -1,0 +1,40 @@
+body {
+	border-color: rgb(128 128 128);
+	width: -webkit-fit-content;
+	width: fit-content;
+	margin: auto;
+	font-size: medium;
+}
+
+h1 {
+	border-bottom: medium solid;
+	border-bottom-color: inherit;
+	padding-bottom: 0.3em;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+ol {
+	list-style-type: none;
+	width: -webkit-fit-content;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	padding-left: 0;
+	border-bottom-color: inherit;
+}
+
+ul {
+	list-style-type: disc;
+	width: -webkit-fit-content;
+	width: fit-content;
+	padding-left: 2ch;
+}
+
+nav {
+	text-align: center;
+	margin-top: 2em;
+}

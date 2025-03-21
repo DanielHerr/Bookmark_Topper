@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<link rel="stylesheet" href="/common.css">
+		<link rel="stylesheet" href="settings.css">
+		<script src="/polyfills/promisify_chrome.js" defer></script>
+		<script src="settings.js" defer></script>
+		<title>Settings | Bookmark Topper</title>
+	</head>
+	<body class="loading">
+		<header>
+			<h1>Bookmark Topper Settings</h1>
+		</header>
+		<form id="settings_form">
+			<fieldset name="actions" disabled>
+				<legend>When should bookmarks be moved to the top after changing folders?</legend>
+				<label><input type="radio" name="action" value="always"> Always</label>
+				<label><input type="radio" name="action" value="ask"> After Asking</label>
+				<label><input type="radio" name="action" value="never"> Never</label>
+			</fieldset>
+			<label>
+				<input type="checkbox" name="sync_settings" disabled> Synchronize Settings Across Devices
+			</label>
+			<label>
+				<input type="checkbox" name="update_notifications" disabled> Show Extension Update Notifications
+			</label>
+		</form>
+		<nav>
+			<a href="/Changelog/Changelog.html">Changelog</a>
+			<a href="/LICENSE.txt">License</a>
+		</nav>
+		<dialog id="error_dialog">
+			<h2>Bookmark Topper Error</h2>
+			<output id="error_message"></output>
+			<a href="https://danielherr.software/Support">Support Homepage</a>
+			<a href="https://www.reddit.com/r/Daniel_Herr_Software">Reddit</a>
+			<a href="https://groups.google.com/g/daniel_herr_software">Google Groups</a>
+			<form method="dialog">
+				<button type="submit">Dismiss</button>
+			</form>
+		</dialog>
+	</body>
+</html>
