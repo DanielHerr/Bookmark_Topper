@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
 	"name": "Bookmark Topper",
-	"version": "3.0",
-	"version_name": "3.0 (2025.2.28, Mv2, Firefox v52+)",
+	"version": "3.1",
+	"version_name": "3.1 (2025.3.23, Mv2, Firefox v52+)",
 	"author": "Daniel Herr",
 	"description": "Moves created bookmarks to the top of their folder.",
 	"icons": { "128": "images/yellow_star.png" },
@@ -15,7 +15,7 @@
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "bookmark_topper@danielherr.software",
-			"update_url": "https://danielherr.software/packages/xpi/bookmark_topper/updates.json",
+			"update_url": "https://github.com/DanielHerr/Bookmark_Topper/releases/latest/download/updates_firefox.json",
 			"strict_min_version": "52"
 		},
 		"gecko_android": {}

@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
 	"name": "Bookmark Topper",
-	"version": "3.0.3.1",
-	"version_name": "3.0 (2025.3.22, Mv3, Chrome 88+)",
+	"version": "3.1.3.1",
+	"version_name": "3.1 (2025.3.23, Mv3, Chromium 88+)",
 	"author": "Daniel Herr",
 	"description": "Moves created bookmarks to the top of their folder.",
 	"icons": { "128": "images/yellow_star.png" },
@@ -11,5 +11,6 @@
 	"permissions": [ "bookmarks", "storage", "notifications" ],
 	"options_page": "Settings/Settings.html",
 	"action": { "default_title": "Bookmark Topper (enabled)" },
-	"homepage_url": "https://danielherr.software/Bookmark_Topper"
+	"homepage_url": "https://danielherr.software/Bookmark_Topper",
+	"update_url": "https://github.com/DanielHerr/Bookmark_Topper/releases/latest/download/updates_chromium.xml"
 }

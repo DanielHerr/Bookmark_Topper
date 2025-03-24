@@ -9,17 +9,6 @@ if(chrome.browserAction) {
 	chrome.action = chrome.browserAction
 }
 
-var changelog = {
-	"3.0": {
-		items: [
-			{ title: "Rename from Bookmarks Reorderer", message: "" },
-			{ title: "Icon toggles bookmark handling", message: "" },
-			{ title: "Optional settings sync", message: "" },
-			{ title: "Confirmation as notifications instead of dialogs", message: "" },
-			{ title: "Imminent MV3 compatibility", message: "" }
-	] }
-}
-
 async function enable() {
 	chrome.action.setIcon({ path: "images/yellow_star.png" })
 	return chrome.action.setTitle({ title: enable.title })
@@ -49,16 +38,20 @@ chrome.runtime.onInstalled.addListener(async function({ reason }) {
 			}
 			let { update_notifications } = await storage.get({ update_notifications: true })
 			if(update_notifications) {
-				let manifest = chrome.runtime.getManifest()
-				let version = manifest.version.split(".", 2).join(".")
-				if(changelog[version]) {
-					await notify("update", Object.assign(changelog[version], {
-						iconUrl: manifest.icons[128],
-						title: "Bookmark Topper Update " + version,
-						type: "list",
-						message: "",
-						buttons: [ { title: "Settings" }, { title: "Full Changelog" } ]
-			})) } }
+				await notify("update", {
+					type: "list",
+					iconUrl: "images/yellow_star.png",
+					title: "Bookmark Topper Update 3.1",
+					buttons: [ { title: "Settings" }, { title: "Full Changelog" } ],
+					items: [
+						{ title: "Mv3 migration", message: "" },
+						{ title: "Icon toggles bookmark handling", message: "" },
+						{ title: "Optional settings sync", message: "" },
+						{ title: "Confirmation as notifications instead of dialogs", message: "" },
+						{ title: "Rename from Bookmarks Reorderer", message: "" }
+					],
+					message: ""
+			}) }
 		} catch(error) {
 			notify_error(error)
 	} }
