@@ -69,4 +69,8 @@ function promisify_chrome_function(object, name, original) {
 				throw error
 } } } }
 
-promisify_chrome_object()
+if(self.browser) {
+	chrome = browser
+} else {
+	promisify_chrome_object()
+}

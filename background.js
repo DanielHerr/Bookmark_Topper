@@ -25,8 +25,15 @@ function notify(id, details) {
 	if(! Notification.maxActions) {
 		delete details.buttons
 	}
-	return chrome.notifications.create(id, details)
-}
+	try {
+		return chrome.notifications.create(id, details)
+	} catch(error) {
+		if(details.requireInteraction) {
+			delete details.requireInteraction
+			return chrome.notifications.create(id, details)
+		} else {
+			throw error
+} } }
 
 chrome.runtime.onInstalled.addListener(async function({ reason }) {
 	if(reason == "update") {
@@ -41,7 +48,7 @@ chrome.runtime.onInstalled.addListener(async function({ reason }) {
 				await notify("update", {
 					type: "list",
 					iconUrl: "images/yellow_star.png",
-					title: "Bookmark Topper Update 3.1",
+					title: "Bookmark Topper Update 3.2",
 					buttons: [ { title: "Settings" }, { title: "Full Changelog" } ],
 					items: [
 						{ title: "Mv3 migration", message: "" },
@@ -90,7 +97,8 @@ chrome.bookmarks.onMoved.addListener(async function(id, movement) {
 						priority: 2,
 						requireInteraction: true,
 						buttons: [ { title: "Move" }, { title: "Don't Move" } ]
-		}) } } }
+					})
+		} } }
 	} catch(error) {
 		notify_error(error)
 } })
